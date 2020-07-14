@@ -1,1 +1,1 @@
-Deploy scripts and configuration files of Devdiary
+Deploy scripts and configuration files for Devdiary
