@@ -1,0 +1,18 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: devdiary
+  web:
+    image: mmredsolutions/devdiary
+    ports:
+      - "3000:3000"
+    environment:
+      PG_HOST: db
+      DEVDIARY_DATABASE_USERNAME: postgres
+      DEVDIARY_DATABASE_PASSWORD: devdiary
+    depends_on:
+      - db
