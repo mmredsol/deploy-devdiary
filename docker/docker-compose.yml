@@ -10,8 +10,6 @@ services:
     image: mmredsolutions/devdiary
     ports:
       - "3000:3000"
-    volumes:
-      - .:/myapp/dd
     environment:
       PG_HOST: db
       DEVDIARY_DATABASE_USERNAME: postgres
