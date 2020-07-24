@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_PASSWORD: devdiary
   web:
-    image: mmredsolutions/devdiary
+    image: mmredsolutions/devdiary:v1
     ports:
       - "3000:3000"
     environment:
