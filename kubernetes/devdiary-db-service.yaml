@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devdiary-db
+  labels:
+    app: devdiary-db
+spec:
+  type: NodePort
+  ports:
+   - port: 5432
+  selector:
+   app: devdiary-db

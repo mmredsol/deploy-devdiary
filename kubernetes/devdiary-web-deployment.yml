@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devdiary-web-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: devdiary-web
+    spec:
+      containers:
+      - name: devdiary
+        image: mmredsolutions/devdiary:v1
+        ports:
+        - containerPort: 3000
+        env:
+          - name: PG_HOST
+            value: devdiary-db.default.svc.cluster.local
+          - name: DEVDIARY_DATABASE_USERNAME
+            value: postgres
+          - name: DEVDIARY_DATABASE_PASSWORD
+            value: devdiary
