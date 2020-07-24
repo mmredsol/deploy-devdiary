@@ -4,10 +4,13 @@ metadata:
   name: devdiary-web-deployment
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: devdiary-web
   template:
     metadata:
       labels:
-        app: devdiary-web
+        name: devdiary-web
     spec:
       containers:
       - name: devdiary

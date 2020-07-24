@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: devdiary-web
   labels:
-    app: devdiary-web
+    name: devdiary-web
 spec:
   type: NodePort
   ports:
    - port: 3000
   selector:
-   app: devdiary-web
+   name: devdiary-web

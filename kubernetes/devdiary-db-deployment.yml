@@ -4,20 +4,23 @@ metadata:
   name: devdiary-db-deployment
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: devdiary-db
   template:
     metadata:
       labels:
-        app: devdiary-db
+        name: devdiary-db
     spec:
       containers:
-        - name: postgres
+        - name: devdiary-db
           image: postgres:10.4
           imagePullPolicy: "IfNotPresent"
           ports:
             - containerPort: 5432
           envFrom:
             - configMapRef:
-                name: postgres-config
+                name: devdiary-db-config
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: postgredb

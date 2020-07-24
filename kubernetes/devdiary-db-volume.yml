@@ -4,7 +4,7 @@ metadata:
   name: devdiary-db-pv-volume
   labels:
     type: local
-    app: devdiary-db
+    name: devdiary-db
 spec:
   storageClassName: manual
   capacity:
@@ -19,7 +19,7 @@ apiVersion: v1
 metadata:
   name: devdiary-db-pv-claim
   labels:
-    app: devdiary-db
+    name: devdiary-db
 spec:
   storageClassName: manual
   accessModes:
