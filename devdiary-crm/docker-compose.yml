@@ -17,7 +17,7 @@ services:
       DEVDIARY_DATABASE_PORT: 5432
       DEVDIARY_REDIS_HOST: redis
   database:
-    image: postgres:12.5
+    image: postgres:11
     environment:
       POSTGRES_USER: devdiary-crm
       POSTGRES_PASSWORD: devdiary-crm
