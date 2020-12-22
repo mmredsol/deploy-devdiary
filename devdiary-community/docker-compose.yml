@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   app:
-    image: mmredsolutions/devdiary:1.0.1-community
+    image: mmredsolutions/devdiary:community
     depends_on:
       - database
       - redis
