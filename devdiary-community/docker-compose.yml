@@ -18,9 +18,14 @@ services:
       DEVDIARY_REDIS_HOST: redis
   database:
     image: postgres:11
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: devdiary
       POSTGRES_PASSWORD: devdiary
       POSTGRES_DB: devdiary
   redis:
     image: redis:5.0.7
+
+volumes:
+  postgres-data: #used by postgres
