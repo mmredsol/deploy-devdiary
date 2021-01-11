@@ -16,6 +16,8 @@ services:
       DEVDIARY_DATABASE_HOST: database
       DEVDIARY_DATABASE_PORT: 5432
       DEVDIARY_REDIS_HOST: redis
+    volumes:
+      - ./uploads-data:/devdiary/public/uploads
   database:
     image: postgres:11
     volumes:
@@ -29,3 +31,4 @@ services:
 
 volumes:
   postgres-data: #used by postgres
+  uploads-data: #used by postgres
